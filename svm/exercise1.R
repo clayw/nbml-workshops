@@ -93,6 +93,7 @@ summary(svmModel)
 #and support vectors
 X11() #quartz() on mac, windows() on MS windows - opens a new plot window
 plot(svmModel, trainingData, X2 ~ X1, ylim=c(-2, 2), xlim=c(-2, 2))
+print(summary(svmModel))
 
 #create 30 test data points for validation
 testData = sample_linear_data(a, b, c, -2, 2, -2, 2, 30)

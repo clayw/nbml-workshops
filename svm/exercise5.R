@@ -105,10 +105,10 @@ tval = tune('svm', train.x=classes ~ ., data=trainData, scale=FALSE)
 
 #Get the best model and predict on the test data
 bestModel = tval$best.model
-summary(bestModel)
+print(summary(bestModel))
 testPred = predict(bestModel, testData)
 
 #Compute the loss on the test data
 loss = zero_one_loss(testPred, testData$classes)
-lstr = sprintf("Zero-one loss: %f", loss)
+lstr = sprintf('Incorrect guesses on test set: %0.1f%%', loss*100)
 print(lstr)
